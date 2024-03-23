@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# 테스트
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+테스트 입니다.
 
-## Commands
+다른 페이지로 잘 넘어가나요?
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [저를 클릭하세요.](./other_page.md)
