@@ -4,3 +4,19 @@ theme:
   font:
     text: Noto Sans Korean
     code: Source Code Pro
+  palette:
+    primary: black
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - toc.follow
+    - navigation.top
+    - search.highlight
+    - header.autohide
+  plugins:
+    - search
+extra:
+  generator: false
+markdown_extensions:
+  - pymdownx.mark
+  - pymdownx.tilde
