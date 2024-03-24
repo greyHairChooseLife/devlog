@@ -4,6 +4,7 @@ hide:
   - toc
 title: Home
 icon: material/emoticon-happy
+date: 2024-03-23
 ---
 
 안녕하세요. 저의 블로그에 오신 것을 환영합니다.
