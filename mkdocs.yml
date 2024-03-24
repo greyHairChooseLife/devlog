@@ -1,3 +1,6 @@
 site_name: My Docs
 theme:
   name: material
+  font:
+    text: Noto Sans Korean
+    code: Source Code Pro
