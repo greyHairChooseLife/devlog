@@ -12,7 +12,7 @@ update:
 
 컨테이너화된 애플리케이션의 배포, 스케일링, 상태관리를 자동화
 
-## 구성요소
+## 주요 구성요소
 
 ### 마스터 노드
 
@@ -27,41 +27,34 @@ update:
 - kube-proxy
 - 컨테이너 런타임
 
-## 배포 과정
+## Kubernetes Workload
 
-웹 애플리케이션을 쿠버네티스에 배포하는 과정은 다음과 같은 단계로 진행됩니다. 여기서는 Node.js와 Express를 사용한 백엔드, React를 사용한 프론트엔드, MariaDB를 데이터베이스로 사용하는 웹 애플리케이션을 예로 들겠습니다.
+### Pod
 
-### 1. 도커 이미지 생성
+1. `docker run` 으로 컨테이너를 생성/실행한 것 처럼 `kubectl run` 명령으로 pod를 생성/실행할 수 있다.
 
-- **백엔드와 프론트엔드**: 각각의 컴포넌트(백엔드, 프론트엔드)를 위한 `Dockerfile`을 작성합니다. 이 파일은 애플리케이션의 실행 환경을 정의합니다. 예를 들어, 백엔드 `Dockerfile`은 Node.js와 Express 앱을 실행하는 방법을, 프론트엔드 `Dockerfile`은 빌드된 React 애플리케이션을 정적 파일 서버로 제공하는 방법을 정의합니다.
-- **데이터베이스**: MariaDB에 대한 도커 이미지는 공식 이미지를 사용할 수 있습니다.
+   다만 쿠버네티스 생태계에서 pod처럼 작은 단위를 직접 관리하지는 않는것이 보통이다. 대신 Deployment나 StatefulSet 같은 리소스를 사용한다.
 
-### 2. 도커 이미지를 레지스트리에 푸시
+2. pod는 하나 이상의 컨테이너로 구성된다. pod 자체의 상태를 조회할 수도 있고, pod 내부의 특정 컨테이너를 조회할 수도 있다.
 
-- 생성된 각 도커 이미지를 도커 허브(Docker Hub)나 프라이빗 도커 레지스트리에 푸시합니다. 이렇게 함으로써 쿠버네티스 클러스터가 이미지를 가져와 실행할 수 있습니다.
+   ```sh
+   kubectl get pod
+   kubectl get pod -o wide
 
-### 3. 쿠버네티스 리소스 정의
+   # 주로 Events부분을 확인한다. Pod의 생성, 시작, 종료 등의 이벤트를 순서대로 확인할 수 있다.
+   kubectl describe pod/<podname>
 
-- **Deployment**: 백엔드와 프론트엔드 애플리케이션을 위한 `Deployment` 리소스를 정의합니다. 이것은 애플리케이션의 복제본 수, 도커 이미지, 포트 등을 포함합니다.
-- **Service**: 각 `Deployment`를 위한 `Service` 리소스를 생성하여, 클러스터 내에서나 외부에서 애플리케이션에 접근할 수 있는 방법을 정의합니다.
-- **PersistentVolumeClaim**: MariaDB 데이터를 영구적으로 저장할 수 있도록 `PersistentVolumeClaim`을 정의합니다.
-- **Secrets/ConfigMaps**: 데이터베이스 연결 문자열이나 환경 변수 같은 구성 정보를 저장하기 위해 `Secrets` 또는 `ConfigMaps`을 사용합니다.
+   kubectl logs pod
+   kubectl logs -f pod # log streaming, --follow
 
-### 4. Ingress 설정
+   kubectl exec -it <podname> -- sh
+   kubectl exec -it <podname> -c <container name> -- sh
+   ```
 
-- **Ingress**: 백엔드와 프론트엔드 서비스에 대한 외부 접근을 관리하기 위해 `Ingress` 리소스를 정의합니다. `Ingress`는 특정 호스트명을 통해 들어오는 요청을 적절한 서비스로 라우팅합니다.
-
-### 5. 쿠버네티스에 배포
-
-- kubectl과 같은 도구를 사용하여 앞서 정의한 쿠버네티스 리소스(`Deployment`, `Service`, `PersistentVolumeClaim`, `Secrets/ConfigMaps`, `Ingress`)를 클러스터에 배포합니다.
-
-### 6. 애플리케이션 모니터링 및 유지 관리
-
-- 애플리케이션과 클러스터의 상태를 모니터링하기 위해 Prometheus, Grafana 같은 도구를 설정할 수 있습니다. 이를 통해 성능 문제를 식별하고 최적화할 수 있습니다.
-
-이 과정을 통해, 개발자는 로컬 환경이나 전체 쿠버네티스 클러스터에서 웹 애플리케이션을 효율적으로 배포하고 관리할 수 있습니다.
+### ReplicaSet
 
 ## reference
 
 - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc)
-- [쿠버네티스 아키텍쳐](https://www.youtube.com/watch?v=-gIyfII5eak)
+- [쿠버네티스 아키텍쳐-유투브](https://www.youtube.com/watch?v=-gIyfII5eak)
+- [쿠버네티스 초급 안내서](https://subicura.com/k8s/guide/pod.html#%E1%84%88%E1%85%A1%E1%84%85%E1%85%B3%E1%84%80%E1%85%A6-pod-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5)
