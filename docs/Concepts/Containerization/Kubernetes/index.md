@@ -53,6 +53,20 @@ update:
 
 ### ReplicaSet
 
+- pod의 템플릿을 정의하고, 원하는 수의 pod 인스턴스를 유지하도록 한다.
+
+  ```sh
+    spec:
+        replicas: <pod 복제본 수량>,
+        selector: <pod 선택자, 무엇을 관리할 것인지 알아볼 수 있도록 지정한다.>,
+        template: <복제 생성할 pod 템플릿>
+  ```
+
+### Deployment
+
+- 가장 널리 사용되는 오브젝트다.
+- ReplicaSet을 이용하여 Pod를 관리한다. Pod의 업데이트, 롤백, 스케일링 할 수 있다.
+
 ## reference
 
 - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc)

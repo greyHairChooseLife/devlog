@@ -2,7 +2,7 @@
 hide:
 title: "스스로 질문하기"
 date: 2024-04-04
-update:
+update: 2024-04-05
 ---
 
 ## QnA
@@ -69,3 +69,89 @@ update:
 - **K3s**는 경량화된 쿠버네티스 배포판으로, IoT, Edge Computing, 소규모 클라우드 환경에서의 사용이나, 리소스가 제한된 환경에서의 프로덕션 사용에 적합합니다. 그러나 대규모 데이터 센터 또는 복잡한 멀티 클러스터 환경에서는 `kubeadm`을 통해 구성된 표준 쿠버네티스 클러스터가 더 나은 선택일 수 있습니다.
 
 따라서, 간단한 서비스를 위한 실제 프로덕션 레벨의 클러스터를 구성하고자 한다면, `kubeadm`을 사용하는 것이 가장 좋은 선택입니다. `kubeadm`을 통해 확장성이 높고 관리가 용이한 클러스터를 구성할 수 있으며, 쿠버네티스 클러스터의 전체 라이프사이클 관리에 필요한 기능을 제공받을 수 있습니다.
+
+### 3. STATE:running인 pod가 있는데 master node만 조회 된다. 이럴수가 있나?
+
+내가 minikube를 사용하고 있어서 그렇다. minikube는 단일 노드 클러스터를 제공하는데, 이 마스터노드 혼자서 control-plane역할과 worker-node 역할을 모두 할 수 있다.
+
+### 3. (master node 내에) 동일한 resource의 controller들은 서로 같은 selector를 가질 수 있을까?
+
+그렇다. 그러나 꼭 필요한 경우가 아니라면 label은 고유하게 관리하는 것이 좋다.
+
+상용 자동차 대부분이 오토미션을 쓰지만 고급 운전자에겐 수동 미션이 필요한 것처럼, 고급 사용자에겐 이유가 있나보다.
+
+### 4. 동일한 리소스 타입(kind)의 yml 파일을 여러개 만들면 컨트롤러도 그만큼 다수 생길까?
+
+아니다. 리소스가 많아지면 컨트롤러가 많아지는 것이 아니라, 컨트롤러가 리소스를 관리하는 대상이 많아지는 것이다.
+
+**API그룹**이 다르다거나, 라벨을 통해 dev/prod 따위로 구분된다 하여도 컨트롤러는 하나다.
+
+<details>
+<summary>API 그룹이란?</summary>
+
+`kubectl get <resource>` 명령을 통해 쿠버네티스 클러스터 내의 리소스를 조회할 때, 리소스의 `NAME`은 `<리소스 유형>/<리소스 이름>` 의 형태로 표시된다.
+
+```sh
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/echo-dp-7f45545895-5rmtm   1/1     Running   0          16m
+pod/echo-dp-7f45545895-86hs9   1/1     Running   0          16m
+pod/echo-dp-7f45545895-g9766   1/1     Running   0          16m
+pod/echo-dp-7f45545895-w9fpn   1/1     Running   0          16m
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/echo-dp-68fd75c85b   0         0         0       36m
+replicaset.apps/echo-dp-7f45545895   4         4         4       16m
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/echo-dp   4/4     4            4           36m
+```
+
+이때, `<리소스 유형>`에 `.<API group>`이 함께 표시된다. 각각은 쿠버네티스 API 내에서 리소스를 그룹화하고 관리하는 방식을 나타낸다. 예를 들어, `Deployment` 리소스는 `apps` API 그룹에 속해 있으므로, `kubectl get` 명령을 통해 조회할 때 `deployment.apps`와 같이 표시된다.
+
+이는 쿠버네티스에서 직접 제공한다. 아래는 API 그룹의 일부 예시이다.
+
+#### `Core` (핵심 그룹)
+
+- **경로**: `/api/v1`
+- **리소스**: `Pods`, `Services`, `Namespaces`, `ConfigMaps`, `Events`, `Endpoints`, `PersistentVolumes`, `PersistentVolumeClaims` 등
+- **설명**: 쿠버네티스의 가장 기본적인 리소스를 제공합니다. 핵심 그룹은 특별한 그룹 이름 없이 사용됩니다.
+
+#### `batch`
+
+- **경로**: `/apis/batch/v1`
+- **리소스**: `Jobs`, `CronJobs`
+- **설명**: 일회성 작업 또는 예약된 작업을 실행하기 위한 리소스를 포함합니다.
+
+#### `autoscaling`
+
+- **경로**: `/apis/autoscaling/v1`
+- **리소스**: `HorizontalPodAutoscalers`
+- **설명**: 애플리케이션의 스케일을 자동으로 조절하기 위한 리소스를 포함합니다.
+
+#### `networking.k8s.io`
+
+- **경로**: `/apis/networking.k8s.io/v1`
+- **리소스**: `Ingress`, `NetworkPolicies`
+- **설명**: 클러스터 내 네트워크 통신 규칙 및 외부로의 접근을 관리하는 데 사용되는 리소스를 포함합니다.
+
+#### `rbac.authorization.k8s.io`
+
+- **경로**: `/apis/rbac.authorization.k8s.io/v1`
+- **리소스**: `Roles`, `RoleBindings`, `ClusterRoles`, `ClusterRoleBindings`
+- **설명**: 리소스 접근 권한을 제어하는데 사용되는 Role-Based Access Control(RBAC) 관련 리소스를 포함합니다.
+
+#### `storage.k8s.io`
+
+- **경로**: `/apis/storage.k8s.io/v1`
+- **리소스**: `StorageClasses`, `VolumeAttachments`
+- **설명**: 스토리지 클래스 및 볼륨 첨부 정보와 같은, 스토리지 관련 리소스를 제공합니다.
+
+#### `apiextensions.k8s.io`
+
+- **경로**: `/apis/apiextensions.k8s.io/v1`
+- **리소스**: `CustomResourceDefinitions` (CRDs)
+- **설명**: 사용자가 정의한 리소스를 쿠버네티스 API에 추가할 수 있게 해주는 리소스를 포함합니다.
+
+이외에도 쿠버네티스는 `admissionregistration.k8s.io`, `scheduling.k8s.io`, `coordination.k8s.io`와 같은 다양한 API 그룹을 제공하며, 쿠버네티스의 기능과 확장성을 증대시킵니다. 각 API 그룹은 쿠버네티스 클러스터를 효율적으로 운영하고 관리하기 위한 특정 범주의 리소스와 기능을 제공합니다.
+
+</details>
