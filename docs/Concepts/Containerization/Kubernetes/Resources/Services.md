@@ -5,8 +5,6 @@ date: 2024-04-05
 update:
 ---
 
->
-
 ## 들어가며
 
 쿠버네티스 클러스터의 네트워크를 담당한다.
@@ -115,14 +113,28 @@ spec:
     tier: app
 ```
 
-### `ClusterIP`가 없어도 `NodePort`는 `pods`를 찾아갈 수 있다
+### `ClusterIP`가 없어도 `NodePort`는 `pod`에 연결될 수 있다
 
-왜냐하면 어차피 `selector`로 `pod`의 `labels`를 찾아가기 때문이다. 그러니까 워커노드가 여럿이라도 `NodePort`가 적합한 `Pod`를 쏙쏙 찾아갈 수 있는 것이다.
-
-그러면 `ClusterIP`가 왜 필요할까? 그 대답은 **세션 지속성**이다.
+어차피 Node의 bridge(cbr0)에 모두 내용이 있기 때문이다. 그러면 `ClusterIP`가 왜 필요할까? 그 대답은 **세션 지속성**이다.
 
 `replica`가 여럿일 때, 특정 상황에서는 클라이언트의 세션이 계속해서 같은 `pod`로 연결되어야 할 수도 있다. 이때 `ClusterIP`의 세션 지속성을 활성화 하면 된다.
 
 반면에 `NodePort`는 세션 지속성을 제공하지 않는다. 그냥 `load balancing`을 통해 분산시킨다.
 
 ## `LoadBalancer`
+
+클라우드 서비스에서 제공하는 로드밸런서를 사용할 수 있다. 이는 클라우드 서비스에 따라 다르다.
+
+on-premise 환경에서는 기능이 제한적이다. 이때는 [MetalLB](https://github.com/metallb/metallb)를 사용할 수 있다.
+
+## `Ingress`
+
+여타 controller나 service와 달리 이건 따로 설치해야한다. 선택지가 많고 입맛대로 고르면 되니까 그런가보다.
+
+    - nginx
+    - traefik
+    - haproxy
+    - alb
+    - ...
+
+설치하면 설정파일 없이 nginx를 실행한듯 동작한다. 이 `conf.d`의 역할을 이제 `ingress spec`가 대체한다.
