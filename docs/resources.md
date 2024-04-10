@@ -9,6 +9,10 @@
 - [hero?](https://www.joinc.co.kr/w/FrontPage/man/12/monolithicToMSA)
 - [hero?-2](https://www.joinc.co.kr/w/devops)
 
+- [다수의 다용도 서버 구성](https://www.clien.net/service/board/cm_linux/18075108?od=T31&po=7&category=0&groupCd=)
+- [K8s tools](https://www.clien.net/service/board/cm_linux/16754746?od=T31&po=19&category=0&groupCd=)
+- [K8s telegram](https://www.clien.net/service/board/cm_linux/16301066?od=T31&po=22&category=0&groupCd=)
+
 ### CICD
 
 - https://velog.io/@rmswjdtn/Spring-Docker-Github-Action-Spring-Boot-%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
@@ -51,9 +55,14 @@
 - [linux2](https://www.sharedit.co.kr/posts/2000)
 
 - [network](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
+- [고수들의 커맨드](https://www.clien.net/service/board/cm_linux/16461267?od=T31&po=20&category=0&groupCd=)
 
 ## chatGPT, this and that
 
 - [활용사례](https://www.youtube.com/watch?v=9Ibegk8Yhy0)
 - [개발자는 어떻게 살아남을까](https://www.youtube.com/watch?v=U55ex_ga7_k)
 - [개발자는 어떻게 살아남을까](https://www.youtube.com/watch?v=M2T-4SoLY-0)
+
+## 일상생활
+
+- [닉네임은 농부: 여러가지 식물 재배](https://www.clien.net/service/board/lecture/18686416?od=T31&po=0&category=0&groupCd=allreview)
