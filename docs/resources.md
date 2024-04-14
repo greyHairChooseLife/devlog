@@ -13,6 +13,8 @@
 - [K8s tools](https://www.clien.net/service/board/cm_linux/16754746?od=T31&po=19&category=0&groupCd=)
 - [K8s telegram](https://www.clien.net/service/board/cm_linux/16301066?od=T31&po=22&category=0&groupCd=)
 
+- [서비스 규모에 따른 배포 방법, chatGPT](https://chat.openai.com/g/g-tXRU6PcBN-devops-gpt/c/f9ecf606-4e2e-418b-9464-efd8d4668a7a)
+
 ### CICD
 
 - https://velog.io/@rmswjdtn/Spring-Docker-Github-Action-Spring-Boot-%EC%9E%90%EB%8F%99%EB%B0%B0%ED%8F%AC%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
