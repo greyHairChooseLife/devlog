@@ -26,6 +26,7 @@ update:
 - kubelet
 - kube-proxy
 - 컨테이너 런타임
+- Pods
 
 ### WorkerLoad
 
@@ -58,3 +59,4 @@ update:
 - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc)
 - [쿠버네티스 아키텍쳐-유투브](https://www.youtube.com/watch?v=-gIyfII5eak)
 - [쿠버네티스 초급 안내서](https://subicura.com/k8s/guide/pod.html#%E1%84%88%E1%85%A1%E1%84%85%E1%85%B3%E1%84%80%E1%85%A6-pod-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5)
+- [따배-유투브](https://www.youtube.com/watch?v=lheclzO-G7k&list=PLApuRlvrZKohaBHvXAOhUD-RxD0uQ3z0c&index=4)
