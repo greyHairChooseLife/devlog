@@ -1,5 +1,5 @@
 ---
-title: "shell script 에러 체크"
+title: 'shell script 에러 체크'
 date: 2024-04-16
 ---
 

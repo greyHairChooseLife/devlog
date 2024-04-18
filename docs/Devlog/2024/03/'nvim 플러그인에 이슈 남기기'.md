@@ -1,10 +1,10 @@
 ---
 hide:
-title: nvim 플러그인에 이슈 남기기
+title: 'nvim 플러그인에 이슈 남기기'
 date: 2024-03-24
 ---
 
-[mkdocs reference](https://squidfunk.github.io/mkdocs-material/reference/)를 보면 아주 많은 formatting 기능이 소개 된다. 당장 사용 가능하게 out-of-box로 제공되기도 하고, `/mkdocs.yml`에서 한줄 한줄 추가해서 기능을 확장할 수도 있다.
+[여기](https://squidfunk.github.io/mkdocs-material/reference/)를 보면 아주 많은 formatting 기능이 소개 된다. 당장 사용 가능하게 out-of-box로 제공되기도 하고, `/mkdocs.yml`에서 한줄 한줄 추가해서 기능을 확장할 수도 있다.
 
 나는 최대한 가볍게 사용하려고 했는데, 그래도 ==highlight== 랑 ~~취소선~~ 정도는 유용하겠다 싶어서 단축키로 지정해보려고 했다.
 
