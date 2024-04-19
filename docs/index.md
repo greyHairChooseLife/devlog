@@ -3,7 +3,6 @@ hide:
   - navigation
   - toc
 title: Home
-icon: material/emoticon-happy
 date: 2024-03-23
 ---
 
