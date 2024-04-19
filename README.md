@@ -40,3 +40,9 @@ doc-generator를 발견한 덕에 쉽게 시작한다.
 ### 3.2 새로운 노트 생성
 
 `mkdocs new [note-name]`
+
+## 4. Theme, 예제, Markdown parser
+
+- [cinder theme](https://sourcefoundry.org/cinder/)
+- [문서 작성 예제](https://sourcefoundry.org/cinder/specimen/)
+- [markdown (parser) by JOHN GRUBER](https://daringfireball.net/projects/markdown/)
