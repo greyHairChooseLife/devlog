@@ -12,15 +12,18 @@ update:
 
 Resources는 다음과 같은 구성요소로 이루어져 있다.
 
-- Deployment, Service, Ingress, ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, StorageClass, Namespace 등이 있다.
+- Deployment, Service, Ingress, ConfigMap, Secret, PersistentVolume, PersistentVolumeClaim, StorageClass,
+  Namespace 등이 있다.
 
 ## Pod
 
 1. `docker run` 으로 컨테이너를 생성/실행한 것 처럼 `kubectl run` 명령으로 pod를 생성/실행할 수 있다.
 
-   다만 쿠버네티스 생태계에서 pod처럼 작은 단위를 직접 관리하지는 않는것이 보통이다. 대신 Deployment나 StatefulSet 같은 리소스를 사용한다.
+   다만 쿠버네티스 생태계에서 pod처럼 작은 단위를 직접 관리하지는 않는것이 보통이다. 대신 Deployment나
+   StatefulSet 같은 리소스를 사용한다.
 
-2. pod는 하나 이상의 컨테이너로 구성된다. pod 자체의 상태를 조회할 수도 있고, pod 내부의 특정 컨테이너를 조회할 수도 있다.
+2. pod는 하나 이상의 컨테이너로 구성된다. pod 자체의 상태를 조회할 수도 있고, pod 내부의 특정 컨테이너를
+   조회할 수도 있다.
 
    ```sh
    kubectl get pod
@@ -51,7 +54,8 @@ Resources는 다음과 같은 구성요소로 이루어져 있다.
 
 - 가장 널리 사용되는 오브젝트다.
 - ReplicaSet을 이용(스스로 생성)하여 Pod를 관리한다. Pod의 업데이트, 롤백, 스케일링 할 수 있다.
-- 버전 업그레이드는 너무나 쉽다. 컨테이너로 제품을 배포하는 만큼 이미지 기반으로 버전을 관리할텐데, 레지스트리에서 업데이트된 이미지를 설정하고 다시 apply 해 주면 땡이다.
+- 버전 업그레이드는 너무나 쉽다. 컨테이너로 제품을 배포하는 만큼 이미지 기반으로 버전을 관리할텐데,
+  레지스트리에서 업데이트된 이미지를 설정하고 다시 apply 해 주면 땡이다.
 
   ```sh
   piVersion: apps/v1
@@ -87,7 +91,8 @@ Resources는 다음과 같은 구성요소로 이루어져 있다.
   # commit history처럼 모두 유지되면 편리하겠지만, 그만큼 **리소스를 차지**하므로 적절히 제한해야 한다.
   ```
 
-- 배포 전략을 설정할 수 있다. 기본값은 rolling update인데, `Pod` 기본적으로 25%씩 업데이트 해 간다. 이 값을 조절할 수 있다.
+- 배포 전략을 설정할 수 있다. 기본값은 rolling update인데, `Pod` 기본적으로 25%씩 업데이트 해 간다. 이 값을
+  조절할 수 있다.
 
   ```sh
   # deployment resource의 spec.strategy를 설정한다.

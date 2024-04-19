@@ -58,7 +58,7 @@ update:
 
 - **CustomResourceDefinitions** (CRDs)
 
-이와 같이, 쿠버네티스의 다양한 리소스는 서로 다른 API 그룹에 속해 있다. 이를 통해 쿠버네티스는 확장성과 유연성을 제공하며, 개발자는 필요에 따라 적절한 리소스와 API를 사용하여 애플리케이션을 구성할 수 있다.
+이와 같이, 쿠버네티스의 다양한 리소스는 서로 다른 API 그룹에 속해 있다. 이를 통해 쿠버네티스는 확장성과
+유연성을 제공하며, 개발자는 필요에 따라 적절한 리소스와 API를 사용하여 애플리케이션을 구성할 수 있다.
 
-> 유용한 커맨드 1: `kubectl api-resources`
-> 유용한 커맨드 2: `watch -n 1 kubectl get cm,po,svc,ep,ing`
+> 유용한 커맨드 1: `kubectl api-resources` 유용한 커맨드 2: `watch -n 1 kubectl get cm,po,svc,ep,ing`

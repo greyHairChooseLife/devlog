@@ -20,8 +20,7 @@ MD033/no-inline-html: Inline HTML [Element: br] (markdownlint)
 - occasion
 
 ```markdown
-> 가나다라
-> <br>마바사아
+> 가나다라 <br>마바사아
 
 <!-- 단순 줄바꿈을 하고싶었다. 아래 처럼 시도하면 아예 한 줄이 추가된다. -->
 
@@ -33,6 +32,5 @@ MD033/no-inline-html: Inline HTML [Element: br] (markdownlint)
 - solution
 
 ```markdown
-> 가나다라 (여기에 공백을 2개 추가한다.)
-> 마바사아
+> 가나다라 (여기에 공백을 2개 추가한다.) 마바사아
 ```

@@ -3,9 +3,11 @@ title: 'sysz: interactive ui for systemctl'
 date: 2024-04-16
 ---
 
-정확히는 TUI는 아니겠다. 단지 fzf를 활용해서 systemctl를 더욱 interactive하게 사용하는 스크립트 정도라고 할 수 있다. 제작자도 오직 shell script로만 제작했다고 강조한다.
+정확히는 TUI는 아니겠다. 단지 fzf를 활용해서 systemctl를 더욱 interactive하게사 용하는 스크립트 정도라고 할
+수 있다. 제작자도 오직 shell script로만 제작했다고강 조한다.
 
-매번 `systemctl status`를 치면서 번거로웠고, 마땅한 도구가 안보여서 fzf preview를 활용해서 직접 만들까 했는데, 오늘 보니 멀쩡한게 있다.
+매번 `systemctl status`를 치면서 번거로웠고, 마땅한 도구가 안보여서 fzf preview 를 활용해서 직접 만들까
+했는데, 오늘 보니 멀쩡한게 있다.
 
 ## sysz
 

@@ -72,13 +72,9 @@
 
 ## temp
 
-https://github.com/ntno/mkdocs-terminal
-https://github.com/fralau/mkdocs-macros-plugin?tab=readme-ov-file
+https://github.com/ntno/mkdocs-terminal https://github.com/fralau/mkdocs-macros-plugin?tab=readme-ov-file
 https://mkdocs-macros-plugin.readthedocs.io/en/latest/
 https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
-https://github.com/aklajnert/mkdocs-simple-hooks
-https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-https://github.com/aklajnert/mkdocs-simple-hooks
-https://github.com/facelessuser/pymdown-extensions
-https://github.com/blueswen/mkdocs-swagger-ui-tag
-https://github.com/byrnereese/mkdocs-minify-plugin
+https://github.com/aklajnert/mkdocs-simple-hooks https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+https://github.com/aklajnert/mkdocs-simple-hooks https://github.com/facelessuser/pymdown-extensions
+https://github.com/blueswen/mkdocs-swagger-ui-tag https://github.com/byrnereese/mkdocs-minify-plugin

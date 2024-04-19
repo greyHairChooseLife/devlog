@@ -16,7 +16,8 @@ date: 2024-04-16
 
 `init`은 부팅 후 가장 먼저 실행되는 PID 1번 프로스세스였다. 이것이 `systemd`로 대체된 것이다.
 
-`init`은 쉘 스크립트로 작성된 파일을 실행하는 방식이었는데, `systemd`는 이를 `unit`라 부르는 요소로 바꿔 속도와 가독성을 개선했다.
+`init`은 쉘 스크립트로 작성된 파일을 실행하는 방식이었는데, `systemd`는 이를 `unit`라 부르는 요소로 바꿔
+속도와 가독성을 개선했다.
 
 `systemd`는 이뿐만 아니라 다른 기능들도 대체했다.
 
@@ -41,14 +42,17 @@ date: 2024-04-16
 
 아래의 다양한 위치에 있다. 각각이 상이한 목적을 가진다.
 
-**특히 1>2>3 번호순으로 높은 priority를 가진다.** unit file은 말하자면 설정파일이기 때문에 덮어 씌워진다는 뜻이다.
+**특히 1>2>3 번호순으로 높은 priority를 가진다.** unit file은 말하자면 설정파일이기 때문에 덮어 씌워진다는
+뜻이다.
 
 1. `/etc/systemd/system/`
    - 가장 자주 방문할 위치.
 2. `/run/systemd/system/`
-   - systemd가 전체 시스템을 관리하는 와중에 생기는 임시파일 따위를 저장하는 곳. 사람이 관여할 일이 없다고 보면 된다.
+   - systemd가 전체 시스템을 관리하는 와중에 생기는 임시파일 따위를 저장하는 곳. 사람이 관여할 일이 없다고
+     보면 된다.
 3. `/lib/systemd/system/`
-   - application이 설치될 때 필요하면 여기에 만들어진다. 낮은 우선순위를 갖는건 당연하다. 내가 시스템의 주인이니까.
+   - application이 설치될 때 필요하면 여기에 만들어진다. 낮은 우선순위를 갖는건 당연하다. 내가 시스템의
+     주인이니까.
 
 ## How is "unit file" look alike?
 
@@ -83,7 +87,8 @@ WantedBy=multi-user.target ; 리눅스 시스템에는 run level이라는게 있
 `systemctl edit <service>`  
 path는 굳이 줄 필요 없다.
 
-unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/systemd/system/<service>.d/override.conf`처럼 최상위 파일이 생성된다.
+unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/systemd/system/<service>.d/override.conf`처럼
+최상위 파일이 생성된다.
 
 > `--full` flag를 추가하면 완전히 대체할 파일을 작성할 수 있다.(원본 복사해서 시작)
 >
@@ -114,14 +119,18 @@ unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/sy
   > **enabled**: 자동시작 O  
   > **disabled**: 자동시작 X
 
-  > **static**: 기타 유닛에 의해서 관리되는 서비스. 그러니 (이름처럼)자동시작 걸고 자시고 필요가 없다. 때가 되면 분연히 떨치고 일어난다.
+  > **static**: 기타 유닛에 의해서 관리되는 서비스. 그러니 (이름처럼)자동시작 걸고 자시고 필요가 없다. 때가
+  > 되면 분연히 떨치고 일어난다.
 
   > **transient**:  
-  > 기타 유닛이 실행될 때(runtime) 필요해서 생겨나고 또 사라지는 놈. 위에서 공부한 `/run/systemd/system/`에 unit 파일이 생기고 삭제 된다.
+  > 기타 유닛이 실행될 때(runtime) 필요해서 생겨나고 또 사라지는 놈. 위에서 공부한 `/run/systemd/system/`에
+  > unit 파일이 생기고 삭제 된다.
   >
-  > 내 시스템을 조회해보니 docker container들과 kubernetes pod들이 이런 상태를 가진다. 헌데 `/run/systemd/system/`에는 없다. 모든 서비스의 unit 파일이 해당 위치에서 보이는건 아니란 뜻이다.
+  > 내 시스템을 조회해보니 docker container들과 kubernetes pod들이 이런 상태를 가진다. 헌데
+  > `/run/systemd/system/`에는 없다. 모든 서비스의 unit 파일이 해당 위치에서 보이는건 아니란 뜻이다.
 
-  > **generated**: systemd가 직접 관리하는 요소는 아니지만(_unit 파일이 없다._), 기타 시스템 구성요소로부터 service로 실행될 놈들이다.
+  > **generated**: systemd가 직접 관리하는 요소는 아니지만(_unit 파일이 없다._), 기타 시스템 구성요소로부터
+  > service로 실행될 놈들이다.
   >
   > 역시나 `/run/systemd/system/`에 unit 파일이 임시로 생성되고 삭제된다.
   >
@@ -133,7 +142,8 @@ unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/sy
 
   > `systemctl get-default`
   >
-  > 내 경우엔 **graphical.target**이 조회되는데, 이놈을 뜯어보면 또 다른 **multi-user.target**을 실행시킨다. 이것들은 공부를 좀 더 해봐도 좋을 것 같다.
+  > 내 경우엔 **graphical.target**이 조회되는데, 이놈을 뜯어보면 또 다른 **multi-user.target**을 실행시킨다.
+  > 이것들은 공부를 좀 더 해봐도 좋을 것 같다.
 
   - **graphical.target**
 
@@ -145,7 +155,8 @@ unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/sy
 
 - `Unit <unit name> could not be found.`라고 나오는 것은 뭐야? 어떻게 대처해?
 
-  > sysz와 systemctl의 리스트 결과가 매우 다르다. 개수만 봐도 5배이상... 뭘까? sysz를 좀 더 뜯어봐야겠다. 봐도 모르겠으면 레딧에 물어보자.
+  > sysz와 systemctl의 리스트 결과가 매우 다르다. 개수만 봐도 5배이상... 뭘까? sysz를 좀 더 뜯어봐야겠다.
+  > 봐도 모르겠으면 레딧에 물어보자.
 
 - `<unit name>.service`가 아니라 `<unit name>@.service`의 정체는 뭐야?
 
@@ -154,4 +165,5 @@ unit 파일의 문법에 맞게 override 할 부분만 작성해주면, `/etc/sy
 ## reference
 
 - youtube: [[따라學 IT] 04. systemd - 이론](https://www.youtube.com/watch?v=vg8bcRlNXB8&t=678s)
-- youtube: [Systemd Deep-Dive: A Complete, Easy to Understand Guide for Everyone](https://www.youtube.com/watch?v=Kzpm-rGAXos)
+- youtube:
+  [Systemd Deep-Dive: A Complete, Easy to Understand Guide for Everyone](https://www.youtube.com/watch?v=Kzpm-rGAXos)

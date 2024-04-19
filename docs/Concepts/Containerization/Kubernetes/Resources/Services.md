@@ -15,7 +15,8 @@ update:
 
 `ClusterIP`는 클러스터 내부 통신에 활용된다. `Pod`와 다른 `Pod`끼리 통신하는 것 말이다.
 
-그런데 어떤 `Pod`와 그 복제본들이 생성되고 삭제 될 때마다 그것들의 IP는 달라진다. 그래서 이들을 대표할 추상화된 네트워크가 필요한 것이다.
+그런데 어떤 `Pod`와 그 복제본들이 생성되고 삭제 될 때마다 그것들의 IP는 달라진다. 그래서 이들을 대표할
+추상화된 네트워크가 필요한 것이다.
 
 ### ClusterIP가 생성된 이후의 (자동화된)과정
 
@@ -23,7 +24,8 @@ update:
 - `Endpoint Controller`가 수집한 `IP`를 가지고 `Endpoint` 생성
 - `Kube-Proxy`는 `Endpoint` 변화를 감시하고 노드의 `iptables`을 설정
 - `CoreDNS`는 `Service`를 감시하고 서비스 이름과 `IP`를 `CoreDNS`에 추가
-  - CoreDNS: 쿠버네티스 클러스터 내부에서 DNS 서비스를 제공한다. service의 name만으로 통신 가능하게 해준다. 클러스터 호환성을 위해 `kube-dns`라는 이름으로 생성된다.
+  - CoreDNS: 쿠버네티스 클러스터 내부에서 DNS 서비스를 제공한다. service의 name만으로 통신 가능하게 해준다.
+    클러스터 호환성을 위해 `kube-dns`라는 이름으로 생성된다.
 
 ### yml파일 예제
 
@@ -103,9 +105,11 @@ template:
 
 `Pod`를 외부로 노출시키고 싶을 땐 `NodePort`를 사용할 수 있다.
 
-> `ClusterIP`가 없어도 `NodePort`는 `pod`에 연결될 수 있다. 어차피 Node의 bridge(cbr0)에 네트워크 정보가 있다.
+> `ClusterIP`가 없어도 `NodePort`는 `pod`에 연결될 수 있다. 어차피 Node의 bridge(cbr0)에 네트워크 정보가
+> 있다.
 >
-> 하지만 이를 동시에 사용할 때 **세션 지속성**을 활용하여 어떤 `요청`을 (여러 복제된 `pod` 중에서)이전 요청을 수행한 `pod`로 다시 보낼 수 있다.
+> 하지만 이를 동시에 사용할 때 **세션 지속성**을 활용하여 어떤 `요청`을 (여러 복제된 `pod` 중에서)이전
+> 요청을 수행한 `pod`로 다시 보낼 수 있다.
 >
 > 반면에 `NodePort`는 세션 지속성을 제공하지 않는다. 그냥 분산시킨다.
 
@@ -136,7 +140,8 @@ spec:
 
 클라우드 서비스에서 제공하는 로드밸런서를 사용할 수 있다. 이는 클라우드 서비스에 따라 다르다.
 
-on-premise 환경에서는 기능이 제한적이다. 이때는 [MetalLB](https://github.com/metallb/metallb)를 사용할 수 있다.
+on-premise 환경에서는 기능이 제한적이다. 이때는 [MetalLB](https://github.com/metallb/metallb)를 사용할 수
+있다.
 
 ## `Ingress`
 

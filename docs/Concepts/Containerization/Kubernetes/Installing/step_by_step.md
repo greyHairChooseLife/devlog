@@ -28,7 +28,8 @@ update:
    2. kubeadm, kubectl, kubelet 설치
 
       - **kubeadm**: the command to bootstrap the cluster.
-      - **kubelet**: the component that runs on all of the machines in your cluster and does things like starting pods and containers.
+      - **kubelet**: the component that runs on all of the machines in your cluster and does things like
+        starting pods and containers.
       - **kubectl**: the command line util to talk to your cluster.
 
       - <details>
@@ -89,7 +90,8 @@ update:
 
    </details><br>
 
-   그런데 잘 보면 STATUS가 **NotReady**로 나온다. 왜냐면 CNI(Container Network Interface)가 설치되어있지 않아서 그렇다.
+   그런데 잘 보면 STATUS가 **NotReady**로 나온다. 왜냐면 CNI(Container Network Interface)가 설치되어있지
+   않아서 그렇다.
 
    <details>
      <summary>weave network add-on 설치</summary>
