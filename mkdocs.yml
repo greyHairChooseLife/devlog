@@ -1,6 +1,7 @@
 site_name: My Docs
 theme:
-  name: material
+  name: null
+  custom_dir: 'cinder'
   font:
     text: Noto Sans Korean
     code: Source Code Pro
