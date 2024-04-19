@@ -1,5 +1,5 @@
 ---
-title: "sysz: interactive ui for systemctl"
+title: 'sysz: interactive ui for systemctl'
 date: 2024-04-16
 ---
 

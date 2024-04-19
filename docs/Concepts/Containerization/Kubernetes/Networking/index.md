@@ -1,6 +1,6 @@
 ---
 hide:
-title: "Kubernetes networking"
+title: 'Kubernetes networking'
 date: 2024-04-07
 update:
 ---

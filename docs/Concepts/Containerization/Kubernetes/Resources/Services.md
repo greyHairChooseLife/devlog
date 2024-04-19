@@ -1,6 +1,6 @@
 ---
 dhide:
-title: "Services"
+title: 'Services'
 date: 2024-04-05
 update:
 ---
@@ -90,9 +90,9 @@ template:
         image: ghcr.io/subicura/counter:latest
         env:
           - name: REDIS_HOST
-            value: "redis" # Service의 이름으로 통신할 수 있다. CoreDNS가 Service 이름을 IP로 변환해준다.
+            value: 'redis' # Service의 이름으로 통신할 수 있다. CoreDNS가 Service 이름을 IP로 변환해준다.
           - name: REDIS_PORT
-            value: "6379"
+            value: '6379'
 ```
 
 </details>

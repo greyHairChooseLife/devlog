@@ -1,6 +1,6 @@
 ---
 hide:
-title: "스스로 질문하기"
+title: '스스로 질문하기'
 date: 2024-04-01
 update:
 ---

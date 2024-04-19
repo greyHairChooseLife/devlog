@@ -1,6 +1,6 @@
 ---
 hide:
-title: "쿠버네티스 리소스와 API 그룹"
+title: '쿠버네티스 리소스와 API 그룹'
 date: 2024-04-09
 update:
 ---

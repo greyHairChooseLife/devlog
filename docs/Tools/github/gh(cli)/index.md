@@ -1,5 +1,5 @@
 ---
-title: "gh notify"
+title: 'gh notify'
 date: 2024-04-11
 ---
 

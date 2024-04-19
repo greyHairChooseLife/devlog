@@ -1,6 +1,6 @@
 ---
 hide:
-title: "shell script의 세계"
+title: 'shell script의 세계'
 date: 2024-04-07
 update:
 ---

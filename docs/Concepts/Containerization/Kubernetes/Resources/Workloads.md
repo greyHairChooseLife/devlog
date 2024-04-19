@@ -1,6 +1,6 @@
 ---
 hide:
-title: "Workloads"
+title: 'Workloads'
 date: 2024-04-05
 update:
 ---

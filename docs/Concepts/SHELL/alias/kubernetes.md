@@ -1,6 +1,6 @@
 ---
 hide:
-title: "kubernetes alias"
+title: 'kubernetes alias'
 date: 2024-04-07
 update:
 ---
