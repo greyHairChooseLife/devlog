@@ -69,3 +69,16 @@
 
 - [닉네임은 농부: 여러가지 식물 재배](https://www.clien.net/service/board/lecture/18686416?od=T31&po=0&category=0&groupCd=allreview)
 - [Re : 제로부터 시작하는… 월순익 1,000만원 만드는 슬로우 라이프 하기로 했습니다. (Ep. 1~4)](https://www.jianyang.co.kr/p/re-1000-ep-14)
+
+## temp
+
+https://github.com/ntno/mkdocs-terminal
+https://github.com/fralau/mkdocs-macros-plugin?tab=readme-ov-file
+https://mkdocs-macros-plugin.readthedocs.io/en/latest/
+https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+https://github.com/aklajnert/mkdocs-simple-hooks
+https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+https://github.com/aklajnert/mkdocs-simple-hooks
+https://github.com/facelessuser/pymdown-extensions
+https://github.com/blueswen/mkdocs-swagger-ui-tag
+https://github.com/byrnereese/mkdocs-minify-plugin
