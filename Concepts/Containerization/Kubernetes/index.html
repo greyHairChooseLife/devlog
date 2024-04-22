@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+    
+    <title>쿠버네티스의 이해 - My Docs</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="../../..">My Docs</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../resources/">resource from youtube</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Concepts <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Containerization</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Docker</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../Docker/">도커의 구성요소</a>
+</li>
+
+        
+            
+<li >
+    <a href="../Docker/QnA/">스스로 질문하기</a>
+</li>
+
+        
+            
+<li >
+    <a href="../Docker/best-practices/">사용 사례</a>
+</li>
+
+        
+            
+<li >
+    <a href="../Docker/tools/">컨테이너를 다루는 도구들</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Kubernetes</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">쿠버네티스의 이해</a>
+</li>
+
+        
+            
+<li >
+    <a href="QnA/">스스로 질문하기</a>
+</li>
+
+        
+            
+<li >
+    <a href="how-to-deploy%28step-by-step%20guide%29/">실전 배포하기 step-by-step guide</a>
+</li>
+
+        
+            
+<li >
+    <a href="tools/">쿠버네티스를 다루는 도구들</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Installing</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="Installing/concepts/">직접 설치에 수반되는 필수 개념들</a>
+</li>
+
+        
+            
+<li >
+    <a href="Installing/step-by-step/">차근차근 설치하기</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Networking</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="Networking/">Kubernetes networking</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Resources</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="Resources/">쿠버네티스 리소스와 API 그룹</a>
+</li>
+
+        
+            
+<li >
+    <a href="Resources/ConfigMap/">ConfigMap</a>
+</li>
+
+        
+            
+<li >
+    <a href="Resources/Services/">Services</a>
+</li>
+
+        
+            
+<li >
+    <a href="Resources/Volume%28local%29/">Volume(local)</a>
+</li>
+
+        
+            
+<li >
+    <a href="Resources/Workloads/">Workloads</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Linux</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../Linux/home-file-structure/">home file structure</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../Linux/systemctl/">about systemd</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">SHELL</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../SHELL/">shell script의 세계</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Alias</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../SHELL/alias/kubernetes/">kubernetes alias</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">STYLE</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../STYLE/css-frameworks/">css frameworks</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Devlog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../Devlog/">개발 블로그</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">2024</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">03</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Devlog/2024/03/nvim-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%97%90-%EC%9D%B4%EC%8A%88-%EB%82%A8%EA%B8%B0%EA%B8%B0/">nvim 플러그인에 이슈 남기기</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">04</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Devlog/2024/04/production-level%EB%A1%9C-%EA%B3%B5%EB%B6%80%ED%95%98%EA%B8%B0/">I just wanted to deploy my code!</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../Devlog/2024/04/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4%EC%97%90-%EB%82%9C%EC%83%9D%EC%B2%98%EC%9D%8C-PR/">오픈소스에-난생처음-PR</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../Projects/">길잡이</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Ideas</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Projects/Ideas/baby-sitting-simulator/">baby_sitting_simulator</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../../Projects/Ideas/book-club/">독서모임</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../Tools/">None</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../Tools/shellcheck/">shell script 에러 체크</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Documentation</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Tools/documentation/mkdocs/">mkdocs의 활용</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Github</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Gh(cli)</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Tools/github/gh%28cli%29/">gh notify</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Neovim</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Tools/neovim/ts-error-prettify/">neovim에서 ts_error_prettify 사용하기</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Sysadmin</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../../Tools/sysadmin/sysz/">sysz: interactive ui for systemctl</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">오답노트 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/">길잡이</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/%22domain%20status%3A%20clientHold%22/">domain status: clientHold</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Docker/tools/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="next" href="QnA/">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#_1">목적</a></li>
+        <li class="first-level "><a href="#_2">주요 구성요소와 용어</a></li>
+            <li class="second-level"><a href="#master-nodecontrol-plane">Master Node(control plane)</a></li>
+                
+            <li class="second-level"><a href="#worker-node">Worker Node</a></li>
+                
+            <li class="second-level"><a href="#workerload">WorkerLoad</a></li>
+                
+            <li class="second-level"><a href="#resources">Resources</a></li>
+                
+            <li class="second-level"><a href="#objects">Objects</a></li>
+                
+        <li class="first-level "><a href="#reference">reference</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<blockquote>
+<p>(개발 단계부터 이미지 생성까지는 도커 클라이언트를 활용하고)<br />
+컨테이너 관련 작업이 배포 및 운영 단계로 넘어가기 시작하면 쿠버네티스를 사용할 때다.</p>
+</blockquote>
+<h2 id="_1">목적</h2>
+<p>컨테이너화된 애플리케이션의 배포, 스케일링, 상태관리를 자동화</p>
+<h2 id="_2">주요 구성요소와 용어</h2>
+<h3 id="master-nodecontrol-plane">Master Node(control plane)</h3>
+<ul>
+<li>API 서버</li>
+<li>스케줄러</li>
+<li>컨트롤러 매니저</li>
+<li>etcd</li>
+</ul>
+<h3 id="worker-node">Worker Node</h3>
+<ul>
+<li>kubelet</li>
+<li>kube-proxy</li>
+<li>컨테이너 런타임</li>
+<li>Pods</li>
+</ul>
+<h3 id="workerload">WorkerLoad</h3>
+<ul>
+<li>쿠버네티스 내에서 애플리케이션을 실행하는 다양한 방식, <code>Resources</code>의 일부 요소들</li>
+<li><code>Development</code>(<code>ReplicaSet</code>)</li>
+<li><code>DaemonSet</code></li>
+<li><code>StatefulSet</code></li>
+<li><code>CronJob</code>(<code>Job</code>)</li>
+</ul>
+<h3 id="resources">Resources</h3>
+<ul>
+<li>쿠버네티스 오브젝트의 타입을 칭한다.</li>
+<li><code>**Workload**(Pod, ReplicaSet, Deployment, ...)</code></li>
+<li><code>**Service**</code></li>
+<li><code>**Ingress**</code></li>
+<li><code>ConfigMap</code></li>
+<li><code>Secret</code></li>
+<li><code>PersistentVolume</code></li>
+<li><code>PersistentVolumeClaim</code></li>
+<li><code>StorageClass</code></li>
+<li><code>Namespace</code></li>
+<li>등</li>
+</ul>
+<h3 id="objects">Objects</h3>
+<ul>
+<li><strong>Resource</strong>의 인스턴스</li>
+</ul>
+<h2 id="reference">reference</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=TlHvYWVUZyc">Kubernetes Explained in 6 Minutes | k8s Architecture</a></li>
+<li><a href="https://www.youtube.com/watch?v=-gIyfII5eak">쿠버네티스 아키텍쳐-유투브</a></li>
+<li><a href="https://subicura.com/k8s/guide/pod.html#%E1%84%88%E1%85%A1%E1%84%85%E1%85%B3%E1%84%80%E1%85%A6-pod-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5">쿠버네티스 초급 안내서</a></li>
+<li><a href="https://www.youtube.com/watch?v=lheclzO-G7k&amp;list=PLApuRlvrZKohaBHvXAOhUD-RxD0uQ3z0c&amp;index=4">따배-유투브</a></li>
+</ul></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
